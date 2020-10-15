@@ -1,0 +1,15 @@
+<!-- <p>dashboard works!</p> -->
+
+
+<table>
+    <thead>
+        <th>Name</th>
+        <th>Description</th>
+    </thead>
+    <body>
+        <tr *ngFor="let todo of todos">
+            <td>{{todo.name}}</td>
+            <td>{{todo.description}}</td>
+        </tr>
+    </body>
+</table>

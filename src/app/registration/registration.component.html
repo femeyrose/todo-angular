@@ -1,0 +1,35 @@
+<div class="register-form">
+    <form [formGroup]="registerForm" (ngSubmit)="register()">
+        <mat-form-field appearance="fill">
+            <mat-label>Name</mat-label>
+            <input matInput type="text" formControlName="name" name="name" class="example-full-width">
+          </mat-form-field> <br>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Email</mat-label>
+            <input matInput type="email" formControlName="email" name="email" class="example-full-width">
+          </mat-form-field> <br>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Password</mat-label>
+            <input matInput type="password" formControlName="password" name="password" class="example-full-width">
+          </mat-form-field> <br>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Confirm Password</mat-label>
+            <input matInput type="password" formControlName="confirmPassword" name="confirmPassword" class="example-full-width">
+          </mat-form-field> <br>
+          <div *ngIf="registerForm.hasError('notSame')">Password and confirmPassword should match</div>
+<!-- multiple field validation -->
+<button type="submit">Register</button>
+    </form>
+</div>
+
+
+<!-- formControlName is used to connect to the names given to angular -->
+<!-- angular material is used to style the sheet -->
+<!-- ng add @angular/material -->
+<!-- import MatFormFieldModule in app.module -->
+<!-- give input tag in b/w these matfield -->
+<!-- MatInputModule is imported -->
+<!-- if we need button style same thing should be done, import matButton -->
