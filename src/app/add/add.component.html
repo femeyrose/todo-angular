@@ -1,0 +1,25 @@
+<div class="login-form">
+    <form [formGroup]="addForm" (ngSubmit)="add()">
+        
+
+          <mat-form-field appearance="fill">
+            <mat-label>Name</mat-label>
+            <input matInput type="text" formControlName="name" name="name" class="example-full-width">
+          </mat-form-field> <br>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Description</mat-label>
+            <input matInput type="text" formControlName="description" name="description" class="example-full-width">
+          </mat-form-field> <br>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Edit</mat-label>
+            <input matInput type="text" formControlName="description" name="description" class="example-full-width">
+          </mat-form-field> <br>
+
+          
+<button type="submit">Add</button>
+    </form>
+</div>
+
+<!-- icon module can be used -->

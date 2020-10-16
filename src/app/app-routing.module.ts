@@ -3,6 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { AddComponent } from './add/add.component';
+import { EditComponent } from './edit/edit.component';
 
 
 const routes: Routes = [
@@ -14,10 +16,13 @@ const routes: Routes = [
 },
 {
   path:'dashboard',component:DashboardComponent
+},
+{
+  path:'add',component:AddComponent
+},
+{
+  path:'edit/:id',component:EditComponent
 }
-
-
-
 
 ];
 

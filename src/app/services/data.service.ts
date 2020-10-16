@@ -10,6 +10,16 @@ export class DataService {
 
   constructor(private http:HttpClient) {this.loadToken(); }
 
+  //helper getOptions is used, since we need to use many times
+
+  getOptions(){
+  let headers= new HttpHeaders();
+  headers=headers.set('authorization','Bearer '+this.token)
+  return {
+    headers
+  }
+  }
+
   loadToken(){
     if(localStorage.getItem('token')){
     this.token=localStorage.getItem('token')
@@ -43,17 +53,38 @@ return this.http.post(environment.apiUrl+"/users/login",data);
 }
 
 getTodos(){
-  let headers= new HttpHeaders();
-  headers=headers.set('authorization','Bearer '+this.token) //the value here is bearer space token and store in header, this is return to backend
-return this.http.get(environment.apiUrl,{
-  headers
-});
+  // let headers= new HttpHeaders();
+  // headers=headers.set('authorization','Bearer '+this.token) //the value here is bearer space token and store in header, this is return to backend
+ //now instaed of above 2 statements, getOptions() can be used, and now header will work
+
+  return this.http.get(environment.apiUrl,this.getOptions());
 }
 //after token creation, like in postman, we add header here too
 //import http headers
 
+addTodo(name,description){
+  const data={
+    name,description
+  }
+return this.http.post(environment.apiUrl,data,this.getOptions());
 
 }
+
+getTodo(id){
+  //return this.http.get(environment.apiUrl+"/"+id,this.getOptions()); //or
+  return this.http.get(`${environment.apiUrl}/${id}`,this.getOptions());
+}
+//this is for editing the contents in that id
+//template literals/template strings in js (`$) letter next to number 1, can be used to concatenate the contents like +"/"+id
+
+
+editTodo(id,data){
+  return this.http.put(`${environment.apiUrl}/${id}`,data,this.getOptions());
+}
+//edit we use put fn
+
+}
+
 
 
 

@@ -11,6 +11,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatInputModule} from '@angular/material/input';
 import {HttpClientModule} from '@angular/common/http';
+import { AddComponent } from './add/add.component';
+import { EditComponent } from './edit/edit.component';
 
 
 @NgModule({
@@ -18,7 +20,9 @@ import {HttpClientModule} from '@angular/common/http';
     AppComponent,
     RegistrationComponent,
     LoginComponent,
-    DashboardComponent
+    DashboardComponent,
+    AddComponent,
+    EditComponent
   ],
   imports: [
     BrowserModule,

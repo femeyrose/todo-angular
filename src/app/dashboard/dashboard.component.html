@@ -1,15 +1,34 @@
 <!-- <p>dashboard works!</p> -->
 
+<a routerLink="/add">Add</a>
 
 <table>
     <thead>
         <th>Name</th>
         <th>Description</th>
+        <th>Edit</th>
     </thead>
     <body>
         <tr *ngFor="let todo of todos">
             <td>{{todo.name}}</td>
             <td>{{todo.description}}</td>
+            <td><button (click)="onEditClick(todo)">edit</button></td>
         </tr>
     </body>
 </table>
+
+
+
+
+
+
+<!-- we can use angular material to style the table, copy the code and use -->
+<!-- import the module for the table from  angular material---MatTableModule -->
+<!-- todos is our datasource...so give datasource=todos -->
+<!-- define displayedColumns:, todos=[] in dashboard.ts, style given in css -->
+<!-- add component is created....ng g c add -->
+<!-- edit icon can be imported from material -->
+<!-- edit is to edit the todos list -->
+<!-- route for edit is created in index.js of route -->
+<!-- ng g c edit -->
+<!-- import edit in app.module, edit/:id -->
